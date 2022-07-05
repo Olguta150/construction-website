@@ -1,0 +1,128 @@
+:root {
+    --dirty-white: #f4f4f8;
+    --yellow: #f3aa20;
+    --darker-yellow: #f9982f;
+    --lighter-yellow: #fea837;
+    --white: #fff;
+    --dark: #16202b;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scrollbar-width: none;
+    width: 100vw;
+    font-family: 'Mukta', sans-serif;
+}
+
+img {
+    width: 100px;
+}
+
+header {
+    display: flex;
+    background: var(--dark);
+    padding: 12px 0;
+    color: var(--dirty-white);
+}
+
+header .top-header-left, .top-header-right, .links {
+    display: flex;
+}
+
+header .top-header-left {
+    padding-left: 70px;
+    display: flex;
+    gap: 50px;
+}
+
+header .top-header-left .item {
+    display: flex;
+    gap: 13px;
+}
+
+header .top-header-right {
+    position: absolute;
+    right: 70px;
+    text-transform: uppercase;
+    font-size: 15px;;
+}
+
+header .top-header-right .links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+header .top-header-right .links li {
+    padding-right: 40px;
+}
+
+header .top-header-right .links li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+header .top-header-right .links li:nth-child(1)::after,
+header .top-header-right .links li:nth-child(2)::after,
+header .top-header-right .links li:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 1px;
+    top: 25%;
+    margin-left: 20px;
+    background: var(--white);
+}
+
+header .top-header-right .search {
+    position: relative;
+}
+
+header .top-header-right .search::after {
+    content: '';
+    width: 2px;
+    height: 15px;
+    background: var(--white);
+    position: absolute;
+    top: 15px;
+    transform: rotate(125deg);
+}
+
+header .top-header-right input {
+    width: 23px;
+    height: 23px;
+    background: transparent;
+    border-radius: 25px;
+    border: solid 2px var(--white);
+    transition: width 0.5s;
+    color: var(--white);
+    padding: 7px 13px;
+}
+
+header .top-header-right input::placeholder {
+    opacity: 0;
+    color: var(--white);
+    transition: opacity 150ms ease-out;
+}
+
+header .top-header-right input:focus::placeholder {
+    opacity: 1;
+}
+
+header .top-header-right input:focus,
+header .top-header-right input:not(:placeholder-shown) {
+    width: 250px;
+    outline: none;
+}
+
